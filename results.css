@@ -29,12 +29,12 @@ body {
 .container {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 35%;
+    top: 50%;
     left: 50%;
     border: 2px solid #24324f;
     border-radius: 12px;
     background-color: #ffba4d;
-    padding: 30px;
+    padding: 0px 30px 0px 30px;
     box-shadow: 6px 6px black;
     margin: 20px;
     width: 60%;
@@ -43,8 +43,6 @@ body {
 .container #form td {
     text-align: left;
     font-family: customFont;
-    padding-right: 10px;
-    padding-top: 6px;
     width: 60%;
     vertical-align: middle;
 }
