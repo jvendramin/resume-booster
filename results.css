@@ -34,49 +34,10 @@ body {
 }
 
 .container #form td {
-    text-align: right;
+    text-align: left;
     font-family: customFont;
     padding-right: 10px;
     padding-top: 6px;
     max-width: 80%;
     vertical-align: middle;
-}
-
-input[type=text] {
-    width: 100%;
-    font-family: customFont;
-    border-radius: 12px;
-    border: 1px solid #24324f;
-}
-
-input[type=file] {
-    max-width: auto;
-    font-family: customFont;
-}
-
-.container #submitButton td {
-    display: block;
-    margin: auto;
-}
-
-input[type=submit] {
-    margin-top: 20px;
-    padding: 8px 18px 8px 18px;
-    color: white;
-    background-color: #24324f;
-    border-radius: 12px;
-    border: 1px solid #24324f;
-    font-family: customFont;
-    font-size: 22px;
-}
-
-input[type=submit]:hover {
-    margin-top: 20px;
-    padding: 8px 18px 8px 18px;
-    color: #24324f;
-    background-color: white;
-    border-radius: 12px;
-    border: 1px solid #24324f;
-    font-family: customFont;
-    font-size: 22px;
 }
