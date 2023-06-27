@@ -37,6 +37,7 @@ body {
     padding: 30px;
     box-shadow: 6px 6px black;
     margin: 20px;
+    width: 60%;
 }
 
 .container #form td {
@@ -44,6 +45,6 @@ body {
     font-family: customFont;
     padding-right: 10px;
     padding-top: 6px;
-    max-width: 80%;
+    width: 60%;
     vertical-align: middle;
 }
