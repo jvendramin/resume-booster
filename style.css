@@ -17,20 +17,26 @@ body {
     left: 24px;
     font-size: 48px;
     font-family: customFont;
-    color: #24324f;
+    color: white;
     font-weight: bolder;
+    border: 2px solid #24324f;
+    border-radius: 12px;
+    background-color: #ffba4d;
+    padding: 8px 14px 8px 14px;
+    box-shadow: 6px 6px black;
 }
 
 .container {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 40%;
+    top: 35%;
     left: 50%;
     border: 2px solid #24324f;
     border-radius: 12px;
     background-color: #ffba4d;
     padding: 30px;
     box-shadow: 6px 6px black;
+    margin: 20px;
 }
 
 .container #form td {
