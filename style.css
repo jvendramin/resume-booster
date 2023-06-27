@@ -36,7 +36,8 @@ body {
     background-color: #ffba4d;
     padding: 30px;
     box-shadow: 6px 6px black;
-    margin: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .container #form td {
@@ -53,6 +54,10 @@ input[type=text] {
     font-family: customFont;
     border-radius: 12px;
     border: 1px solid #24324f;
+    padding: 4px 0px 4px 8px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 input[type=file] {
