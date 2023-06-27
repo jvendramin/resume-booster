@@ -1,3 +1,122 @@
+function logSubmit(event) {
+    const url = document.getElementById("jobURL").value;
+    const resume = document.getElementById("resume").files[0];
+    const filename = resume.name.replace(' ','_');
+
+
+    const requestOptions = {
+        method: 'PUT',
+        headers: {
+          "Content-Type": "application/pdf"
+        },
+        body: resume
+      };
+
+    const fetchURL = 'https://ahkmo5etzh.execute-api.us-east-2.amazonaws.com/dev/cv-booster-resume-uploads-v2/' + filename;
+
+    fetch(fetchURL, requestOptions)
+    .then(res => console.log(res.text()))
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+    event.preventDefault();
+  }
+  
+const form = document.getElementById("submission");
+form.addEventListener("submit", logSubmit);
+
+/*
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        //Bucket Configurations
+        var bucketName = 'cv-booster-resume-uploads';
+        var bucketRegion = 'us-east-2';
+        var IdentityPoolId = 'us-east-2:c827316c-7d41-486f-ad35-2d37f986520d';
+
+        AWS.config.update({
+                        region: bucketRegion,
+                        credentials: new AWS.CognitoIdentityCredentials({
+                            IdentityPoolId: IdentityPoolId
+                        })
+                    });
+
+                    var s3 = new AWS.S3({
+                        apiVersion: '2006-03-01',
+                        params: {Bucket: bucketName}
+                });
+    </script>
+
+        <script type="text/javascript">
+        function s3upload() {
+            var files = document.getElementById("resume").files;
+            if (files) {
+                var file = files[0];
+                var fileName = file.name;
+                var filePath = 'path/' + fileName.replace(' ','_');
+                var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/bucket/' +  filePath;
+                s3.upload({
+                    Key: filePath,
+                    Body: file,
+                    ACL: 'public-read'
+                    }, 
+                    function(err, data) {
+                        if(err) {
+                            reject('error');
+                        }
+                    //alert('Successfully Uploaded!');
+                    alert(fileUrl);
+                    }).on('httpUploadProgress', function (progress) {
+                    var uploaded = parseInt((progress.loaded * 100) / progress.total);
+                    $("progress").attr('value', uploaded);
+                });
+            }
+        };
+    </script>
+
+//Bucket Configurations
+ var bucketName = 'cv-booster-resume-uploads';
+ var bucketRegion = 'us-east-2';
+ var IdentityPoolId = 'us-east-2:c827316c-7d41-486f-ad35-2d37f986520d';
+
+ AWS.config.update({
+                 region: bucketRegion,
+                 credentials: new AWS.CognitoIdentityCredentials({
+                     IdentityPoolId: IdentityPoolId
+                 })
+             });
+
+             var s3 = new AWS.S3({
+                 apiVersion: '2006-03-01',
+                 params: {Bucket: bucketName}
+         });
+
+function s3upload() {
+    var files = document.getElementById("resume").files;
+    if (files) 
+    {
+      var file = files[0];
+      var fileName = file.name;
+      var filePath = 'path/' + fileName.replace(' ','_');
+      var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/bucket/' +  filePath;
+      alert(fileUrl)
+      s3.upload({
+        Key: filePath,
+         Body: file,
+         ACL: 'public-read'
+         }, function(err, data) {
+         if(err) {
+         reject('error');
+         }
+         //alert('Successfully Uploaded!');
+         alert(fileUrl);
+         }).on('httpUploadProgress', function (progress) {
+         var uploaded = parseInt((progress.loaded * 100) / progress.total);
+         $("progress").attr('value', uploaded);
+       });
+    }
+ };
+
 const fileioHeaders = {
     'accept': 'application/json',
     'Authorization': 'Bearer 7FXSG7C.50PTY95-RWE478D-GG1T6C0-3GNDZE2'
@@ -9,16 +128,13 @@ function logSubmit(event) {
 
     const formData = new FormData();
     formData.append('user-file',resume);
-    formData.append('maxDownloads',1);
-    formData.append('autoDelete',true);
 
     console.log(formData)
 
-    fetch('https://file.io/', {
+    fetch('https://www.filestackapi.com/api/store/S3?key=Awtmke8j2SW2y2FshGYiCz', {
 
         method: 'POST',
-        body: formData,
-        headers: fileioHeaders
+        body: JSON.stringify(formData)
 
     })
     .then(res => console.log(res.json()))
@@ -29,10 +145,10 @@ function logSubmit(event) {
   }
   
 const form = document.getElementById("submission");
-form.addEventListener("submit", logSubmit);
+//form.addEventListener("submit", logSubmit);
 
-/*
-const openAIKey = 'Bearer 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';
+
+const openAIKey = 'Bearer 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';
 const openAIHeaders = {'Authorization':openAIKey};
 
 "use strict";
