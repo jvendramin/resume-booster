@@ -5,15 +5,20 @@ body {
     background-size: cover;
 }
 
-.topleft {
+@font-face {
+    font-family: customFont;
+    src: url(Vercetti-Regular.ttf);
+}
+
+.logo {
     position: absolute;
-    top: 10px;
-    left: 18px;
+    top: 18px;
+    left: 24px;
     font-size: 48px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #b9597b;
-    text-shadow: 1.6px 1.6px #24324fcb;
-  }
+    font-family: customFont;
+    color: #24324f;
+    font-weight: bolder;
+}
 
 .container {
     position: absolute;
@@ -27,21 +32,30 @@ body {
     box-shadow: 6px 6px black;
 }
 
-table td {
+.container #form td {
     text-align: right;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: customFont;
     padding-right: 10px;
     padding-top: 6px;
+    max-width: 80%;
+    vertical-align: middle;
 }
 
 input[type=text] {
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: customFont;
+    border-radius: 12px;
+    border: 1px solid #24324f;
 }
 
 input[type=file] {
-    width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: auto;
+    font-family: customFont;
+}
+
+.container #submitButton td {
+    display: block;
+    margin: auto;
 }
 
 input[type=submit] {
@@ -49,9 +63,10 @@ input[type=submit] {
     color: white;
     border: 1px solid #24324f;
     background-color: #24324f;
-    padding: 10px;
+    padding: 8px 18px 8px 18px;
     border-radius: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: customFont;
+    font-size: 22px;
 }
 
 input[type=submit]:hover {
@@ -59,6 +74,8 @@ input[type=submit]:hover {
     color: #24324f;
     border: 1px solid #24324f;
     background-color: white;
-    padding: 10px;
+    padding: 8px 18px 8px 18px;
     border-radius: 12px;
+    font-family: customFont;
+    font-size: 22px;
 }
