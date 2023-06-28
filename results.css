@@ -26,6 +26,30 @@ body {
     box-shadow: 6px 6px black;
 }
 
+.backButton {
+    padding: 8px 18px 8px 18px;
+    color: white;
+    background-color: #24324f;
+    border-radius: 12px;
+    border: 1px solid #24324f;
+    font-family: customFont;
+    font-size: 16px;
+    margin: 0px 0px 12px 0px;
+    float: left;
+}
+
+.backButton:hover {
+    padding: 8px 18px 8px 18px;
+    color: #24324f;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #24324f;
+    font-family: customFont;
+    font-size: 16px;
+    margin: 0px 0px 12px 0px;
+    float: left;
+}
+
 .container {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -43,7 +67,7 @@ body {
 .resp {
     display: inline-block;
     white-space: nowrap;
-  }
+}
 
 .container #form td {
     text-align: left;
