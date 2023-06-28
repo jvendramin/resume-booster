@@ -26,6 +26,14 @@ body {
     box-shadow: 6px 6px black;
 }
 
+.hidden {
+
+    position: absolute;
+    top: 200px;
+    left: 24px;
+
+}
+
 .container {
     position: absolute;
     transform: translate(-50%, -50%);

@@ -1,26 +1,69 @@
-function logSubmit(event) {
+const openAIKey = config.openAIKey;
+const openAIHeaders = {
+    'Authorization':openAIKey,
+    'Content-Type':'application/json'
+};
+
+const getOpenAI = async (url, resumeURL) => {
+
+    const payload = {
+        "model": "text-davinci-003",
+        "prompt": `Step 1: Return a list titled 'Important Job Posting Buzzwords' of 7 crucial buzzwords from this job posting: ${url}. Step 2: Use this resume: ${resumeURL} to create a second list titled: 'Job Experience Section Suggestions' of 4-7 suggestions of how to word the job experience section to be relevant to the included job posting. Step 3: Return both lists in HTML format using <ul>. Step 4: Use <h3> tags for the list titles.`,
+        "max_tokens": 3800,
+        "temperature": 0.7
+    };
+
+    const openAIRes = await fetch('https://api.openai.com/v1/completions', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: openAIHeaders
+        });
+    
+    let openAIJSON = await openAIRes.json();
+
+    alert(openAIJSON)
+    
+    return openAIJSON;
+};
+
+async function logSubmit(event) {
     const url = document.getElementById("jobURL").value;
     const resume = document.getElementById("resume").files[0];
-    const filename = resume.name.replace(' ','_');
+    const filename = resume.name.replaceAll(' ','_');
 
 
     const requestOptions = {
         method: 'PUT',
-        headers: {
-          "Content-Type": "application/pdf"
-        },
         body: resume
       };
 
-    const fetchURL = 'https://ahkmo5etzh.execute-api.us-east-2.amazonaws.com/dev/cv-booster-resume-uploads-v2/' + filename;
+    const fetchURL = config.s3URL + filename;
 
     fetch(fetchURL, requestOptions)
-    .then(res => console.log(res.text()))
-    .then(result => console.log(result))
+    .then(res => res.text())
+    .then(result => result)
     .catch(error => console.log('error', error));
 
+    const s3URL = 'https://cv-booster-resume-uploads-v2.s3.us-east-2.amazonaws.com/' + filename;
+
+    const payload = {
+        "model": "text-davinci-003",
+        "prompt": `Step 1: Return a list titled 'Important Job Posting Buzzwords' of 7 crucial buzzwords from this job posting: ${url}. Step 2: Use this resume: ${s3URL} to create a second list titled: 'Job Experience Section Suggestions' of 4-7 suggestions of how to word the job experience section to be relevant to the included job posting. Step 3: Return both lists in HTML format using <ul>. Step 4: Use <h3> tags for the list titles.`,
+        "max_tokens": 3700,
+        "temperature": 0.7
+    };
+
+    fetch('https://api.openai.com/v1/completions', {method: 'POST',body: JSON.stringify(payload),headers: openAIHeaders})
+    .then(response => console.log(response.json()))
+    .then(result => result)
+    .catch(error => console.log('error', error));
+
+    //const htmlResp = openaiJSON.choices[0].text.replace(/\n/g,'');
+
+    //document.getElementById("hidden").innerHTML = htmlResp;
+
     event.preventDefault();
-  }
+};
   
 const form = document.getElementById("submission");
 form.addEventListener("submit", logSubmit);
@@ -148,8 +191,7 @@ const form = document.getElementById("submission");
 //form.addEventListener("submit", logSubmit);
 
 
-const openAIKey = 'Bearer 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';
-const openAIHeaders = {'Authorization':openAIKey};
+
 
 "use strict";
 document.addEventListener("DOMContentLoaded", init);
