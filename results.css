@@ -1,14 +1,10 @@
 body {
-    background: url("bg2.svg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: #F5F5F5;
 }
 
 @font-face {
     font-family: customFont;
-    src: url(Vercetti-Regular.ttf);
+    src: url(NimbusSanL-Reg.otf);
 }
 
 .logo {
@@ -17,37 +13,30 @@ body {
     left: 24px;
     font-size: 48px;
     font-family: customFont;
-    color: white;
-    font-weight: bolder;
-    border: 2px solid #24324f;
-    border-radius: 12px;
-    background-color: #ffba4d;
-    padding: 8px 14px 8px 14px;
-    box-shadow: 6px 6px black;
+    color: black;
+    font-weight: 500;
 }
 
 .backButton {
-    padding: 8px 18px 8px 18px;
+    margin-top: 20px;
+    padding: 8px 16px 8px 16px;
     color: white;
-    background-color: #24324f;
-    border-radius: 12px;
-    border: 1px solid #24324f;
+    background-color: #2394F4;
+    border-radius: 8px;
+    border: 1px solid #2394F4;
     font-family: customFont;
     font-size: 16px;
-    margin: 0px 0px 12px 0px;
-    float: left;
 }
 
 .backButton:hover {
-    padding: 8px 18px 8px 18px;
-    color: #24324f;
-    background-color: white;
-    border-radius: 12px;
-    border: 1px solid #24324f;
+    margin-top: 20px;
+    padding: 8px 16px 8px 16px;
+    color: white;
+    background-color: #1974c4;
+    border-radius: 8px;
+    border: 1px solid #1974c4;
     font-family: customFont;
     font-size: 16px;
-    margin: 0px 0px 12px 0px;
-    float: left;
 }
 
 .container {
@@ -55,11 +44,10 @@ body {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    border: 2px solid #24324f;
+    border: 2px solid #C7C7C7;
     border-radius: 12px;
-    background-color: #ffba4d;
-    padding: 0px 30px 0px 30px;
-    box-shadow: 6px 6px black;
+    background-color: #FFFFFF;
+    padding: 0px 30px 20px 30px;
     margin: 20px;
     width: 40%;
 }

@@ -2,8 +2,6 @@ const openAIHeaders = {'Authorization':config.openAIKey,'Content-Type':'applicat
 
 function advance(response) {
 
-    alert(response)
-
     document.getElementById("hidden").innerHTML = response;
     document.getElementById("hidden").addEventListener("change", sessionStorage.setItem('data', response));
     window.location.href = "./resultsPage.html";
