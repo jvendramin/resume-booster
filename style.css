@@ -15,7 +15,7 @@ body {
     src: url(NimbusSanL-Reg.otf);
 }
 
-.logo {
+.logo a:link {
     position: absolute;
     top: 18px;
     left: 24px;
@@ -23,6 +23,18 @@ body {
     font-family: customFont;
     color: black;
     font-weight: 500;
+    text-decoration:none;
+}
+
+.logo a:visited {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    font-size: 48px;
+    font-family: customFont;
+    color: black;
+    font-weight: 500;
+    text-decoration:none;
 }
 
 .hidden {
