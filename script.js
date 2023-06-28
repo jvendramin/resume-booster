@@ -5,13 +5,9 @@ function storage(event) {
     const resume = document.getElementById("resume").files[0];
     const filename = resume.name.replaceAll(' ','_');
 
-    alert(filename)
-
     sessionStorage.setItem('url', url);
     sessionStorage.setItem('resume', resume);
     sessionStorage.setItem('filename', filename);
-
-    alert('storage complete')
     
     window.location = "./loading.html";
 
