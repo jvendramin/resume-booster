@@ -12,7 +12,12 @@ body {
 
 @font-face {
     font-family: customFont;
-    src: url(NimbusSanL-Reg.otf);
+    src: url(HelveticaNeueLTProMd.otf);
+}
+
+@font-face {
+    font-family: customFont2;
+    src: url(HelveticaNeueLTProLt.otf);
 }
 
 .logo a:link {
@@ -22,7 +27,7 @@ body {
     font-size: 48px;
     font-family: customFont;
     color: black;
-    font-weight: 500;
+    font-weight: 550;
     text-decoration:none;
 }
 
@@ -33,7 +38,7 @@ body {
     font-size: 48px;
     font-family: customFont;
     color: black;
-    font-weight: 500;
+    font-weight: 550;
     text-decoration:none;
 }
 
@@ -69,28 +74,30 @@ body {
     background-color: #FFFFFF;
     padding: 30px;
     margin:auto;
-    height: 30%
+    height: 50%
 }
 
 .container #form {
-    margin: 30px 20px 30px 20px ;
+    margin: 0px 20px 0px 20px ;
     vertical-align: middle;
 }
 
 .container #form td {
     text-align: right;
-    font-family: customFont;
-    padding-right: 10px;
-    padding-top: 20px;
+    vertical-align: middle;
+    font-family: customFont2;
+    padding: 12px 30px 12px 0px;
     max-width: 80%;
+    font-weight: bold;
 }
 
-input[type=text] {
+textarea {
+    resize: none;
     width: 100%;
-    font-family: customFont;
+    font-family: customFont2;
     border-radius: 12px;
     border: 1px solid #24324f;
-    padding: 4px 0px 4px 8px;
+    padding: 10px 0px 0px 10px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
@@ -99,6 +106,8 @@ input[type=text] {
 input[type=file] {
     max-width: auto;
     font-family: customFont;
+    display: block;
+
 }
 
 .container #submitButton td {
@@ -107,23 +116,23 @@ input[type=file] {
 }
 
 button {
-    margin-top: 20px;
-    padding: 8px 16px 8px 16px;
-    color: white;
-    background-color: #2394F4;
+    padding: 6px 16px 6px 16px;
+    color: #2394F4;
+    background-color: white;
     border-radius: 8px;
-    border: 1px solid #2394F4;
+    border: 1px solid transparent;
     font-family: customFont;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 button:hover {
-    margin-top: 20px;
-    padding: 8px 16px 8px 16px;
-    color: white;
-    background-color: #1974c4;
+    margin-bottom: 20px;
+    padding: 6px 16px 6px 16px;
+    color: 2394F4;
+    background-color: white;
     border-radius: 8px;
-    border: 1px solid #1974c4;
+    border: 1px solid transparent;
     font-family: customFont;
-    font-size: 16px;
+    font-size: 22px;
+    cursor: pointer;
 }

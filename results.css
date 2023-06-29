@@ -14,7 +14,7 @@ body {
     font-size: 48px;
     font-family: customFont;
     color: black;
-    font-weight: 500;
+    font-weight: 550;
     text-decoration:none;
 }
 
@@ -25,30 +25,30 @@ body {
     font-size: 48px;
     font-family: customFont;
     color: black;
-    font-weight: 500;
+    font-weight: 550;
     text-decoration:none;
 }
 
 .backButton {
-    margin-top: 20px;
-    padding: 8px 16px 8px 16px;
-    color: white;
-    background-color: #2394F4;
+    padding: 6px 16px 6px 16px;
+    color: #2394F4;
+    background-color: white;
     border-radius: 8px;
-    border: 1px solid #2394F4;
+    border: 1px solid transparent;
     font-family: customFont;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .backButton:hover {
-    margin-top: 20px;
-    padding: 8px 16px 8px 16px;
-    color: white;
-    background-color: #1974c4;
+    margin-bottom: 20px;
+    padding: 6px 16px 6px 16px;
+    color: 2394F4;
+    background-color: white;
     border-radius: 8px;
-    border: 1px solid #1974c4;
+    border: 1px solid transparent;
     font-family: customFont;
-    font-size: 16px;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 .container {

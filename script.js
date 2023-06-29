@@ -1,11 +1,11 @@
 // store user inputs to pass to loading page
 function storage(event) {
 
-    const url = document.getElementById("jobURL").value;
+    const posting = document.getElementById("posting").value;
     const resume = document.getElementById("resume").files[0];
     const filename = resume.name.replaceAll(' ','_');
 
-    sessionStorage.setItem('url', url);
+    sessionStorage.setItem('posting', posting);
     sessionStorage.setItem('resume', resume);
     sessionStorage.setItem('filename', filename);
     
