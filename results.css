@@ -4,7 +4,12 @@ body {
 
 @font-face {
     font-family: customFont;
-    src: url(NimbusSanL-Reg.otf);
+    src: url(HelveticaNeueLTProMd.otf);
+}
+
+@font-face {
+    font-family: customFont2;
+    src: url(HelveticaNeueLTProLt.otf);
 }
 
 .logo a:link {
@@ -30,6 +35,7 @@ body {
 }
 
 .backButton {
+    margin-bottom: 20px;
     padding: 6px 16px 6px 16px;
     color: #2394F4;
     background-color: white;
@@ -42,7 +48,7 @@ body {
 .backButton:hover {
     margin-bottom: 20px;
     padding: 6px 16px 6px 16px;
-    color: 2394F4;
+    color: #1b7cd1;
     background-color: white;
     border-radius: 8px;
     border: 1px solid transparent;
@@ -52,26 +58,34 @@ body {
 }
 
 .container {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
+    position: relative; 
     left: 50%;
+    transform: translateX(-53%) translateY(15%);
     border: 2px solid #C7C7C7;
     border-radius: 12px;
     background-color: #FFFFFF;
-    padding: 0px 30px 20px 30px;
-    margin: 20px;
-    width: 40%;
-}
-
-.resp {
-    display: inline-block;
-    white-space:pre-line;
+    padding: 20px 0px 20px 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    max-height: 80%;
 }
 
 .container #form td {
     text-align: left;
-    font-family: customFont;
-    width: 60%;
-    vertical-align: middle;
+    font-family: customFont2;
+}
+
+.resumeButton {
+    color: #2394F4;
+    float: right;
+    margin-right: 40px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.resumeButton:hover {
+    color: #1b7cd1;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -74,12 +74,14 @@ body {
     background-color: #FFFFFF;
     padding: 30px;
     margin:auto;
-    height: 50%
+    height: auto;
+    width: auto;
 }
 
 .container #form {
-    margin: 0px 20px 0px 20px ;
+    margin: 0px 10px 0px 20px ;
     vertical-align: middle;
+    width: auto;
 }
 
 .container #form td {
@@ -110,6 +112,12 @@ input[type=file] {
 
 }
 
+input[type=range] {
+    width: auto;
+    font-family: customFont;
+    display: block;
+}
+
 .container #submitButton td {
     display: block;
     margin: auto;
@@ -128,7 +136,7 @@ button {
 button:hover {
     margin-bottom: 20px;
     padding: 6px 16px 6px 16px;
-    color: 2394F4;
+    color: #1b7cd1;
     background-color: white;
     border-radius: 8px;
     border: 1px solid transparent;

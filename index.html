@@ -13,16 +13,25 @@
         <form id="submission">
             <table id="form">
                 <tr>
+                    <td>AI Creativity:</td>
+                    <td>
+                        <input type="range" min="1" max="10" value="7" class="slider" step="0.5" id="myRange">
+                    </td>
+                    <td>
+                        <p id="demo"></p>
+                    </td>
+                </tr>
+                <tr>
                     <td>Upload Resume:</td>
-                    <td><input id="resume" type="file"></td>
+                    <td colspan="2"><input id="resume" type="file"></td>
                 </tr>
                 <tr>
                     <td>Job Posting:</td>
-                    <td><textarea id="posting" cols="50" rows="15" maxlength="7000" wrap=physical placeholder="Paste job posting including job title here"></textarea></td>
+                    <td colspan="2"><textarea id="posting" cols="50" rows="15" maxlength="7000" wrap=physical placeholder="Paste job posting including job title here"></textarea></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button id="submitButton" type="submit">Start →</button></td>
+                    <td colspan="2"><button id="submitButton" type="submit">Start →</button></td>
                 </tr>
             </table>
         </form>
